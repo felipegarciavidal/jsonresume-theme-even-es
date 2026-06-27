@@ -12,7 +12,7 @@ export default function Education(education = []) {
     education.length > 0 &&
     html`
       <section id="education">
-        <h3>Education</h3>
+        <h3>Formación</h3>
         <div class="stack">
           ${education.map(
             ({ area, courses = [], institution, startDate, endDate, studyType, url }) => html`
@@ -20,13 +20,13 @@ export default function Education(education = []) {
                 <header>
                   <h4>${Link(url, institution)}</h4>
                   <div class="meta">
-                    <div>${[studyType, area && html`<strong>${area}</strong>`].filter(Boolean).join(' in ')}</div>
+                    <div>${[studyType, area && html`<strong>${area}</strong>`].filter(Boolean).join(' en ')}</div>
                     ${startDate && html`<div>${DateTimeDuration(startDate, endDate)}</div>`}
                   </div>
                 </header>
                 ${courses.length > 0 &&
                 html`
-                  <h5>Courses</h5>
+                  <h5>Asignaturas</h5>
                   <ul>
                     ${courses.map(course => html`<li>${markdown(course)}</li>`)}
                   </ul>

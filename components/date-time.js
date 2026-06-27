@@ -5,7 +5,7 @@ import { html } from '@rbardini/html'
  * @returns {string}
  */
 const formatDate = dateString =>
-  new Date(dateString).toLocaleDateString('en', {
+  new Date(dateString).toLocaleDateString('es', {
     month: 'short',
     year: 'numeric',
     timeZone: 'UTC',

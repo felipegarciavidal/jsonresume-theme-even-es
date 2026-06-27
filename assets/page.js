@@ -1,4 +1,4 @@
-const pluralize = (num, str) => `${num} ${num === 1 ? str : str.concat('s')}`
+const pluralize = (num, str) => `${num} ${num === 1 ? str : /[aeiou]$/i.test(str) ? str.concat('s') : str.concat('es')}`
 
 class TimeDuration extends HTMLElement {
   connectedCallback() {
@@ -17,9 +17,9 @@ class TimeDuration extends HTMLElement {
     const days = diffDate.getDate() - 1
 
     const segments = [
-      years && pluralize(years, 'yr'),
-      months && pluralize(months, 'mo'),
-      days && !years && !months && pluralize(days, 'day'),
+      years && pluralize(years, 'año'),
+      months && pluralize(months, 'mes'),
+      days && !years && !months && pluralize(days, 'día'),
     ].filter(Boolean)
     if (!segments.length) return
 
