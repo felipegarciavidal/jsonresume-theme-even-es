@@ -39,7 +39,7 @@
   "source": "index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "jsonresume-theme-even": "bin/cli.js"
+    "jsonresume-theme-even-es": "bin/cli.js"
   },
   "files": [
     "bin",
