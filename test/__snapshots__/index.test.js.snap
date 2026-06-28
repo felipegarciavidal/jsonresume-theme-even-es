@@ -86,7 +86,7 @@ customElements.define('time-duration', TimeDuration)
     </header>
    
       <section id="work">
-        <h3>Experiencia laboral</h3>
+        <h3>Experiencia</h3>
         <div class="stack">
           
               <article>

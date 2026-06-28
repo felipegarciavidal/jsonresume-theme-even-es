@@ -24,7 +24,7 @@ export default function Work(work = []) {
     work.length > 0 &&
     html`
       <section id="work">
-        <h3>Experiencia laboral</h3>
+        <h3>Experiencia</h3>
         <div class="stack">
           ${nestedWork.map(({ description, name, url, items = [] }) => {
             const singleItem = items.length === 1 ? items[0] : undefined
