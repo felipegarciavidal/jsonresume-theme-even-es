@@ -2,7 +2,7 @@
 
 exports[`renders a resume 1`] = `
 "<!doctype html>
-    <html lang="en" style="--color-background-light:lightgray; --color-background-dark:darkgray;">
+    <html lang="es" style="--color-background-light:lightgray; --color-background-dark:darkgray;">
       <head>
         <meta charset="utf-8" />
         
@@ -13,7 +13,7 @@ exports[`renders a resume 1`] = `
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
         
         <script type="module">
-          const pluralize = (num, str) => \`\${num} \${num === 1 ? str : str.concat('s')}\`
+          const pluralize = (num, str) => \`\${num} \${num === 1 ? str : /[aeiou]$/i.test(str) ? str.concat('s') : str.concat('es')}\`
 
 class TimeDuration extends HTMLElement {
   connectedCallback() {
@@ -32,9 +32,9 @@ class TimeDuration extends HTMLElement {
     const days = diffDate.getDate() - 1
 
     const segments = [
-      years && pluralize(years, 'yr'),
-      months && pluralize(months, 'mo'),
-      days && !years && !months && pluralize(days, 'day'),
+      years && pluralize(years, 'año'),
+      months && pluralize(months, 'mes'),
+      days && !years && !months && pluralize(days, 'día'),
     ].filter(Boolean)
     if (!segments.length) return
 
@@ -86,7 +86,7 @@ customElements.define('time-duration', TimeDuration)
     </header>
    
       <section id="work">
-        <h3>Work</h3>
+        <h3>Experiencia laboral</h3>
         <div class="stack">
           
               <article>
@@ -97,7 +97,8 @@ customElements.define('time-duration', TimeDuration)
                           <div>
                             <strong><a href="http://piedpiper.example.com">Pied Piper</a></strong> · Awesome compression company
                           </div>
-                          <div><time datetime="2013-12-01">Dec 2013</time> – <time datetime="2014-12-01">Dec 2014</time> <time-duration dates="2013-12-01|2014-12-01"></time-duration></div>
+                          <div><time datetime="2013-12-01">dic 2013</time> – <time datetime="2014-12-01">dic 2014</time>
+  <time-duration dates="2013-12-01|2014-12-01"></time-duration></div>
                           <div>Palo Alto, CA</div>
                         
                   </div>
@@ -121,7 +122,7 @@ customElements.define('time-duration', TimeDuration)
       </section>
      
       <section id="volunteer">
-        <h3>Volunteer</h3>
+        <h3>Voluntariado</h3>
         <div class="stack">
           
               <article>
@@ -129,7 +130,8 @@ customElements.define('time-duration', TimeDuration)
                   <h4><a href="http://coderdojo.example.com/">CoderDojo</a></h4>
                   <div class="meta">
                     <strong>Teacher</strong>
-                    <div><time datetime="2012-01-01">Jan 2012</time> – <time datetime="2013-01-01">Jan 2013</time> <time-duration dates="2012-01-01|2013-01-01"></time-duration></div>
+                    <div><time datetime="2012-01-01">ene 2012</time> – <time datetime="2013-01-01">ene 2013</time>
+  <time-duration dates="2012-01-01|2013-01-01"></time-duration></div>
                   </div>
                 </header>
                 <p>Global movement of free coding clubs for young people.</p>
@@ -144,19 +146,20 @@ customElements.define('time-duration', TimeDuration)
       </section>
      
       <section id="education">
-        <h3>Education</h3>
+        <h3>Formación</h3>
         <div class="stack">
           
               <article>
                 <header>
                   <h4><a href="https://www.ou.edu/">University of Oklahoma</a></h4>
                   <div class="meta">
-                    <div>Bachelor in <strong>Information Technology</strong></div>
-                    <div><time datetime="2011-06-01">Jun 2011</time> – <time datetime="2014-01-01">Jan 2014</time> <time-duration dates="2011-06-01|2014-01-01"></time-duration></div>
+                    <div>Bachelor en <strong>Information Technology</strong></div>
+                    <div><time datetime="2011-06-01">jun 2011</time> – <time datetime="2014-01-01">ene 2014</time>
+  <time-duration dates="2011-06-01|2014-01-01"></time-duration></div>
                   </div>
                 </header>
                 
-                  <h5>Courses</h5>
+                  <h5>Asignaturas</h5>
                   <ul>
                     <li><p>DB1101 - Basic SQL</p></li><li><p>CS2011 - Java Introduction</p></li>
                   </ul>
@@ -168,7 +171,7 @@ customElements.define('time-duration', TimeDuration)
     
         
       <section id="projects">
-        <h3>Projects</h3>
+        <h3>Proyectos</h3>
         <div class="stack">
           
               <article>
@@ -179,7 +182,7 @@ customElements.define('time-duration', TimeDuration)
                       <strong>Team lead and Designer</strong>
                       at <strong>Smoogle</strong>
                     </div>
-                    <div><time datetime="2016-08-24">Aug 2016</time></div>
+                    <div><time datetime="2016-08-24">ago 2016</time></div>
                     <div>application</div>
                   </div>
                 </header>
@@ -200,14 +203,14 @@ customElements.define('time-duration', TimeDuration)
       </section>
      
       <section id="awards">
-        <h3>Awards</h3>
+        <h3>Premios</h3>
         <div class="stack">
           
               <article>
                 <header>
                   <h4>Digital Compression Pioneer Award</h4>
                   <div class="meta">
-                    <div>Awarded by <strong>Techcrunch</strong></div> <time datetime="2014-11-01">Nov 2014</time>
+                    <div>Awarded by <strong>Techcrunch</strong></div> <time datetime="2014-11-01">nov 2014</time>
                   </div>
                 </header>
                 <p>There is no spoon.</p>
@@ -218,7 +221,7 @@ customElements.define('time-duration', TimeDuration)
      
         
       <section id="publications">
-        <h3>Publications</h3>
+        <h3>Publicaciones</h3>
         <div class="stack">
           
               <article>
@@ -226,7 +229,7 @@ customElements.define('time-duration', TimeDuration)
                   <h4><a href="http://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)">Video compression for 3d media</a></h4>
                   <div class="meta">
                     <div>Published by <strong>Hooli</strong></div>
-                    <time datetime="2014-10-01">Oct 2014</time>
+                    <time datetime="2014-10-01">oct 2014</time>
                   </div>
                 </header>
                 <p>Innovative middle-out compression algorithm that changes the way we store data.</p>
@@ -236,7 +239,7 @@ customElements.define('time-duration', TimeDuration)
       </section>
      
       <section id="skills">
-        <h3>Skills</h3>
+        <h3>Aptitudes</h3>
         <div class="grid-list">
           
               <div>
@@ -261,7 +264,7 @@ customElements.define('time-duration', TimeDuration)
       </section>
      
       <section id="languages">
-        <h3>Languages</h3>
+        <h3>Idiomas</h3>
         <div class="grid-list">
           <div><h4>English</h4> Native speaker</div>
         </div>
@@ -269,7 +272,7 @@ customElements.define('time-duration', TimeDuration)
     
         
       <section id="interests">
-        <h3>Interests</h3>
+        <h3>Intereses</h3>
         <div class="grid-list">
           
               <div>
@@ -285,7 +288,7 @@ customElements.define('time-duration', TimeDuration)
       </section>
      
       <section id="references">
-        <h3>References</h3>
+        <h3>Referencias</h3>
         <div class="stack">
           
               <blockquote>
