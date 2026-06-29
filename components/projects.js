@@ -7,7 +7,7 @@ import Link from './link.js'
  * @param {string[]} roles
  * @returns {string}
  */
-const formatRoles = roles => (Intl.ListFormat ? new Intl.ListFormat('en').format(roles) : roles.join(', '))
+const formatRoles = roles => (Intl.ListFormat ? new Intl.ListFormat('es').format(roles) : roles.join(', '))
 
 /**
  * @param {import('../schema.d.ts').ResumeSchema['projects']} projects
@@ -39,7 +39,7 @@ export default function Projects(projects = []) {
                   <div class="meta">
                     <div>
                       ${roles.length > 0 && html`<strong>${formatRoles(roles)}</strong>`}
-                      ${entity && html`at <strong>${entity}</strong>`}
+                      ${entity && html`en <strong>${entity}</strong>`}
                     </div>
                     ${startDate && html`<div>${DateTimeDuration(startDate, endDate)}</div>`}
                     ${type && html`<div>${type}</div>`}

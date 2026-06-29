@@ -20,7 +20,7 @@ export default function Publications(publications = []) {
                 <header>
                   <h4>${Link(url, name)}</h4>
                   <div class="meta">
-                    ${publisher && html`<div>Published by <strong>${publisher}</strong></div>`}
+                    ${publisher && html`<div>Publicado por <strong>${publisher}</strong></div>`}
                     ${releaseDate && DateTime(releaseDate)}
                   </div>
                 </header>
